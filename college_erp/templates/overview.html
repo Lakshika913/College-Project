@@ -1,0 +1,366 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+      .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 1%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  padding-top: 45px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+    padding-top: 4px;
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+/*footer*/
+    @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+    .footer-distributed{
+        background-color: #3253a8;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-distributed .footer-left{
+        width: 30%;
+    }
+    
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    /* The company logo */
+    
+    .footer-distributed .footer-left img{
+        width: 30%;
+    }
+    
+    .footer-distributed h3 span{
+        color:  #e0ac1c;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+    }
+    
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+        color:  #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+    
+    
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+        color:  #e0ac1c;
+        text-decoration: none;;
+    }
+    
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+        width: 30%;
+    }
+    
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    @media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}
+    .carousel-inner{
+        height: 550px;
+    }</style>
+<br>
+<div class='container'> <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Overview
+      </li>
+    </ol>
+  </nav></div>
+<div class="site">
+    <div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+<h1><strong>About JMIT</strong></h1>
+<br>
+
+
+
+    <div id="carouselExampleIndicators" class=" carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'image/overview 1.png'%}" class="d-block w-100" style="width:60px;height:500px" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/overview2.png'%}" class="d-block w-100" style="width:60px;height:500px" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/overview3.png'%}" class="d-block w-100" style="width:60px;height:500px" alt="...">
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+
+<br><br>
+
+  <h3>Vision:</h3>
+  "Excellence Through Creativity and Innovation" <br> 
+  <h3>Mission:</h3>
+  "To Produce World Class Engineers, Managers and Technologies with Training of Head, Heart and Hands Employable anywhere in the world"
+  "To contribute in building skillful society."
+  "To inculcate high moral, ethical and professional values amongst our students, faculty & staff."
+  <br>
+  <br>
+  Seth Jai Parkash Mukand Lal Institute of Knowledge and Service is one among twenty two institutions spread over Haryana, Uttar Pradesh and Punjab and owe their existence to the munificent and philanthropic spirit of Seth Mukand Lal, a close adherent of Gandhi Ji. He came under the Gandhian influence in earlier twenties. Gandhi ji had fondly nick-named him “Pagla Bhagat”. Seth Mukand Lal reportedly bore the entire expenditure incurred in the holding of All India Congress Sessions on the banks of river Ravi, Lahore in 1929 where resolution for complete independence of India was adopted. Illiterate himself, he vowed to dispel the darkness of ignorance by opening educational institutions in the part of the country. Hence, he established Mukand Lal National High School at Abdullapur (now Yamuna Nagar) as the first institution of the Mukand chain.
+  <br>
+  <br>
+  Seth Jai Parkash, his illustrious son accelerated the pace of opening institutions in the name of his father. A selfless man, he motivated the rich, particularly the business community by saying “Rain water accumulates on the roof top without an outlet, shall bring down the roof. Likewise, wealth without charity will ruin the household of wealthy”. He acted on this principle till the last and contributed large sums of money to the educational institutions.
+
+ "Excellence Through Creativity and Innovation"
+ <br>
+ <br>
+ <br>
+ Seth Jai Parkash Mukand Lal Institute of Engineering and Technology (JMIT) is located in rural pollution-free and green habitat of Radaur at a Distance of 18km from Yamuna Nagar and 28km from Kurukshetra. The Institute was established by The Ved Parkash Mukand Lal Educational Society (Regd.) in the year 1995. The Institute has been approved by All India Council for Technical Education (AICTE) & Department of Technical Education (DTE), Haryana and is affiliated to Kurukshetra University, Kurukshetra (Haryana). It is an ISO 9001:2008 Certified Institute and is in its twenty three years of operation. Around 2000 students are studying on the Campus. JMIT Radaur is the most prestigious among the 22 institutions of knowledge & service. Being run by The Ved Parkash Mukand Lal Educational Society. The society was founded by Seth Mukand Lal who was a freedom fighter and philanthropist of great repute. Hailing from Radaur, the Seth had the dream of creating these institutions which world achieve. Excellence through creativity & Innovation this visionary ideals were handed down the generations from him to Seth Jai Parkash & then on to Seth Ashok Kumar who runs 22 Institutions which includes Technical Institutions, Degree Colleges, Senior Secondary Schools & Charitable Hospitals.
+ <br>
+ <br>
+ <center>
+ <img src="{% static 'image/overview4.png' %}" style="width:600px;height:600px;max-width: 100%;" ; >
+ </center>
+</div>
+<div class="sidebar">
+           
+      
+           
+    <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+   <a href="/overview/" class='widget' >Overview</a>  <br>
+    
+    <a href="/socialrespons/" class='widget'>Social Responsibilities</a> <br>
+    <a href="/achievements/" class='widget' >Awards and Achievements</a> <br>
+    <a href="/rulesandregulation/" class='widget' >Rules and Regulations</a> <br>
+    
+</div><!-- .sidebar -->
+</div>
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+  
+        <h3>About<span>JMIT</span></h3>
+  
+        <p class="footer-links">
+            <a href="#">Home</a>
+            |
+            <a href="#">About</a>
+            |
+            <a href="#">Contact</a>
+        </p>
+  
+      
+    </div>
+  
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+              <p><span></span>
+                Radaur-135133
+                (Distt. Yamuna Nagar)<br>
+                Haryana </p>
+        </div>
+  
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>01732-283700, 283800</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About the College</span>
+            We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+      
+            <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+  </footer>
+{% endblock %}

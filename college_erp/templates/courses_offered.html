@@ -1,0 +1,533 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+  .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 2%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  padding-top: 40px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+    padding-top: 0;
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+  #button {
+  display: inline-block;
+  background-color: #3253a8;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.baseBlock {
+	margin: 0px 0px 35px 0px;
+	padding: 0 0 15px 0px;
+	border-radius: 5px;
+	overflow: hidden;
+	min-height: 390px;
+	background: #fff;
+	-moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.baseBlock:hover {
+	-webkit-transform: translate(0, -8px);
+	-moz-transform: translate(0, -8px);
+	-ms-transform: translate(0, -8px);
+	-o-transform: translate(0, -8px);
+	transform: translate(0, -8px);
+	box-shadow: 0 40px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+.pr-0 {
+    padding-right: 0 !important;
+}
+.pt-10 {
+    padding-top: 10px !important;
+}
+    .footer-distributed{
+        background-color: #3253a8;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-distributed .footer-left{
+        width: 30%;
+    }
+    
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    /* The company logo */
+    
+    .footer-distributed .footer-left img{
+        width: 30%;
+    }
+    
+    .footer-distributed h3 span{
+        color:  #e0ac1c;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+    }
+    
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+        color:  #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+    
+    
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+        color:  #e0ac1c;
+        text-decoration: none;;
+    }
+    
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+        width: 30%;
+    }
+    
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    @media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}
+    .carousel-inner{
+        height: 550px;
+    }
+
+
+
+    </style>
+    <br>
+    <div class='container'> <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Courses Offered
+        </li>
+      </ol>
+    </nav></div>
+    <div class="site">
+      <div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+    <h1><center>Engineering</center></h1>
+<br>
+
+    <div class="row">
+     <div class="col-md-4">
+      <div class="card baseBlock">
+     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/cs.jpg' %}" data-holder-rendered="true">
+     <div class="card-body">
+       <h4 class="card-title">Computer Science</h4>
+       <p class="card-text"> 
+        Study of the theoretical foundations of information and computation, and of practical techniques for their implementation and application in computer systems. 
+         </p> <br>
+       <a href="http://127.0.0.1:8000/cs/" class="btn btn-primary">Overview</a>
+     </div>
+   </div>
+     </div>
+        <div class="col-md-4">
+      <div class="card baseBlock">
+     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/it.jpg' %}" data-holder-rendered="true">
+     <div class="card-body">
+       <h4 class="card-title">Information Technology</h4>
+       <p class="card-text"> Information technology is building communications networks for a company, safeguarding data and information, creating and administering databases</p> <br>
+       <a href="http://127.0.0.1:8000/it/" class="btn btn-primary">Overview</a>
+     </div>
+   </div>
+     </div>
+        <div class="col-md-4">
+      <div class="card baseBlock">
+     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/mechanical.jpg' %}" data-holder-rendered="true">
+     <div class="card-body">
+       <h4 class="card-title">Mechanical Engineering </h4>
+       <p class="card-text">Mechanical engineering is the study, design, development, construction, and testing of mechanical and thermal sensors and devices, including tools, engines, and machines. </p> 
+       <a href="http://127.0.0.1:8000/mech/" class="btn btn-primary">Overview</a>
+     </div>
+   </div>
+     </div>
+        <div class="col-md-4">
+      <div class="card baseBlock">
+     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/ece.jpg' %}" data-holder-rendered="true">
+     <div class="card-body">
+       <h4 class="card-title">Electronics & Communication Engg. </h4>
+       <p class="card-text"> It is an electrical engineering discipline which utilizes nonlinear and active electrical components to design electronic circuits.</p> <br>
+       <a href="http://127.0.0.1:8000/ece/" class="btn btn-primary">Overview</a>
+     </div>
+   </div>
+     </div>
+        <div class="col-md-4">
+      <div class="card baseBlock">
+     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/ele.jpg' %}" data-holder-rendered="true">
+     <div class="card-body">
+       <h4 class="card-title">Electrical Engineering</h4>
+       <p class="card-text">It is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use electricity, electronics, and electromagnetism</p>
+       <a href="http://127.0.0.1:8000/ele/" class="btn btn-primary">Overview</a>
+     </div>
+   </div>
+     </div>
+        <div class="col-md-4">
+      <div class="card baseBlock">
+     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/applied.jpg' %}" data-holder-rendered="true">
+     <div class="card-body">
+       <h4 class="card-title">Applied Science & Humanity</h4>
+       <p class="card-text">It is dedicated to lay the foundation of a student in the fundamental sciences and basic humanities like Physics, Chemistry, Environmental Studies.</p>
+       <a href="http://127.0.0.1:8000/ash/" class="btn btn-primary">Overview</a>
+     </div>
+   </div>
+     </div>
+    </div>
+    <h1><center>Management</center></h1> <br>
+    
+        <div class="row">
+         <div class="col-md-4">
+          <div class="card baseBlock">
+         <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/bba.jpg' %}" data-holder-rendered="true">
+         <div class="card-body">
+           <h4 class="card-title">Bachelor of Business Administration</h4>
+           <p class="card-text"> 
+            A bachelor-level business management course that is designed to impart managerial and entrepreneurial skills to management aspirants.
+             </p>
+           <a href="http://127.0.0.1:8000/bba/" class="btn btn-primary">Overview</a>
+         </div>
+       </div>
+         </div>
+            <div class="col-md-4">
+          <div class="card baseBlock">
+         <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/mba.jpg' %}" data-holder-rendered="true">
+         <div class="card-body">
+           <h4 class="card-title">Master of Business Administration </h4>
+           <p class="card-text"> It is advanced business degrees that are designed to meet the ever-growing demand in the corporate sector. </p><br>
+           <a href="http://127.0.0.1:8000/mba/" class="btn btn-primary">Overview</a>
+         </div>
+       </div>
+       </div>
+
+       <h1><center>Computer Science & Applications</center></h1> 
+       <br>
+       <div class="container">
+        <div class="row">
+         <div class="col-md-4">
+          <div class="card baseBlock">
+         <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/bca.jpg' %}" data-holder-rendered="true">
+         <div class="card-body">
+           <h4 class="card-title">Bachelor of Computer Applications</h4>
+           <p class="card-text"> 
+            Study of the theoretical foundations of information and computation, and of practical techniques for their implementation and application in computer systems. 
+             </p>
+           <a href="http://127.0.0.1:8000/bca/" class="btn btn-primary">Overview</a>
+         </div>
+       </div>
+         </div>
+            <div class="col-md-4">
+          <div class="card baseBlock">
+         <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" style="height: 180px; width: 100%; display: block;" src="{% static 'image/mca.jpg' %}" data-holder-rendered="true">
+         <div class="card-body">
+           <h4 class="card-title">Master of Computer Applications</h4>
+           <p class="card-text">  An opportunity  to work with tools meant to develop better and faster applications.</p> <br> <br>
+
+           <a href="http://127.0.0.1:8000/mca/" class="btn btn-primary">Overview</a>
+         </div>
+       </div>
+       </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="sidebar">
+         
+    
+         
+            <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+           <a href="/admission_procedure/" class='widget' >PROCEDURE</a>  <br>
+            
+            <a href="/courses_offered/" class='widget'>Courses Offered</a> <br>
+            <a href="/fees/" class='widget' >Fee Structure</a> <br>
+            <a href="/Epros/" class='widget' >E-Prospectus</a>
+         
+        </div><!-- .sidebar -->
+    </div>
+
+
+      
+       <a id="button"></a>
+       <footer class="footer-distributed">
+
+        <div class="footer-left">
+     
+            <h3>About<span>JMIT</span></h3>
+    
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+    
+          
+        </div>
+    
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                  <p><span></span>
+                    Radaur-135133
+                    (Distt. Yamuna Nagar)<br>
+                    Haryana </p>
+            </div>
+    
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>01732-283700, 283800</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the College</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+          
+                <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+       <script> // ===== Scroll to Top ==== 
+        var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+
+</script>
+
+
+
+
+{% endblock %}

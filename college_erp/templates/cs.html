@@ -1,0 +1,600 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 2%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  padding-top: 40px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+    padding-top: 0;
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;}
+
+    .footer-distributed{
+        background-color: #3253a8;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-distributed .footer-left{
+        width: 30%;
+    }
+    
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    /* The company logo */
+    
+    .footer-distributed .footer-left img{
+        width: 30%;
+    }
+    
+    .footer-distributed h3 span{
+        color:  #e0ac1c;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+    }
+    
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+        color:  #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+    
+    
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+        color:  #e0ac1c;
+        text-decoration: none;;
+    }
+    
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+        width: 30%;
+    }
+    
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    @media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}s
+    .carousel-inner{
+        height: 550px;
+    }</style>
+    <br>
+    <div class='container'> <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+          <li class="breadcrumb-item"><a href="/courses_offered/" style="text-decoration: none;">Courses Offered</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Computer Science
+          </li>
+        </ol>
+      </nav></div>
+    <div class="site">
+        <div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+   <h2><b>OBJECTIVE</b></h2><hr>
+   
+   1. To enable students to acquire specialized knowledge for various subjects and enhance their personal, social and cognitive skills to meet challenges of today and tomorrow. <br>
+   2. To provide efficient and effective computer education and to inculcate modern technical values among the students. <br>
+   3. To move ahead with the time which demands better and smarter computer education. <br>
+   4. To analyze the local and global impact of computing on individuals, organizations and society. <br>
+<br> 
+   <h2><b>BENEFITS</b></h2><hr>
+
+
+   1. Improves the spectrum of knowledge in designing, its implementation, management of information system including both hardware and software. <br>
+  2. Helps students learn the handling of latest tools and techniques necessary for the success of project. <br>
+  3. Offers knowledge in core concepts of digital world that hold the thread to future technologies, such as cloud computing, artificial intelligence, data analytics, robotics, graphic solutions, simulations, etc. <br>
+  <br><h2><b>Career Opportunities </b></h2><hr>
+
+
+  Once the students come out of JMIT,RADAUR with flying colors in Computer Science Engineering then they get amazing job outcomes in distinguished organizations, like Accenture, HCL, Wipro Technologies, Cognizant, TCS, LG Soft, Tech Mahindra, Google, Reliance Industries Limited, Oracle, Dell, Unisys, Sapient, MRF, IBM, Samsung, Infosys, and many others. Some of the common positions that students can serve after completing their B.Tech Computer Science Engineering are: <br>
+
+  -Developers <br>
+  -Design Engineers <br>
+  -Solution Integrators  <br>
+  -Network Administrators <br>
+  -Database Administrators <br>
+  -Software Testers <br>
+  -Domain Consultants <br>
+  -Industries Officer (Technical) <br>
+  -IT Manager <br>
+  -Jr. Software Developer <br>
+  -Software Engineer <br>
+  -System Engineers <br>
+  -Team Leads/ Architect <br>
+  -Technology Analyst <br> <br>
+  <h2><b>Placement Highlights</b></h2><hr>
+  <div style="overflow-x: auto;">
+  <table style="border: 1px solid #d3d3d3; border-collapse: collapse;max-width: 100%;" width="60%" cellspacing="0" cellpadding="3" border="1">
+    <tbody>
+    <tr>
+    <td><strong>Year</strong></td>
+    <td><strong>No. of placement offers</strong></td>
+    </tr>
+    <tr>
+    <td>2020-21</td>
+    <td>123 (Placement process is going on)</td>
+    </tr>
+    <tr>
+    <td>2019-20</td>
+    <td>121</td>
+    </tr>
+    <tr>
+    <td>2018-19</td>
+    <td>134</td>
+    </tr>
+    <tr>
+    <td>2017-18</td>
+    <td>102</td>
+    </tr>
+    <tr>
+    <td>2016-17</td>
+    <td>104</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <br>
+    <h2><b>
+        Additional Inputs</b></h2><hr>
+        * Python <br>
+* Data Analytics <br> 
+* Artificial Intelligence <br>
+* JavaScript(Js) <br>
+* Android <br>
+* Gate Classes <br>
+* Cloud Computing <br> <br>
+<h2><b>Faculty</b></h2><hr>
+<div style="overflow-x: auto;">
+<table style="width: 100%; height: 270px;max-width: 100%;" width="100%" cellspacing="3" cellpadding="3" border="1">
+    <tbody>
+    <tr style="height: 18px;">
+    <td style="height: 36px; width: 5.95359%;" rowspan="2"><strong>S. No.</strong></td>
+    <td style="height: 36px; width: 25.227%; text-align: center;" rowspan="2"><strong>Name of The Teaching Faculty</strong></td>
+    <td style="height: 36px; width: 28.557%; text-align: center;" rowspan="2"><strong>Designation</strong></td>
+    <td style="height: 18px; text-align: center; width: 40.0606%;" colspan="3"><strong>Qualification</strong></td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 13.0172%; text-align: center;"><strong>PG</strong></td>
+    <td style="height: 18px; width: 9.9899%; text-align: center;"><strong>Doctorate</strong></td>
+    <td style="height: 18px; width: 17.0535%; text-align: center;"><strong>University Aprroval No.</strong></td>
+    </tr>
+    <tr style="height: 54px;">
+    <td style="height: 54px; width: 5.95359%;">1</td>
+    <td style="height: 54px; width: 25.227%;">Dr. Vivek Sharma</td>
+    <td style="height: 54px; width: 28.557%;">Asso. Prof./ Corporate Head/ Dean - CS &amp; IT Services</td>
+    <td style="height: 54px; width: 13.0172%;">M.Tech., UGC-NET</td>
+    <td style="height: 54px; width: 9.9899%;">Ph.D</td>
+    <td style="height: 54px; width: 17.0535%;">CBA/166B/2002/3143 &amp; <br>CBA/166B/2009/1541</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">2</td>
+    <td style="height: 18px; width: 25.227%;">Dr. Gaurav Sharma</td>
+    <td style="height: 18px; width: 28.557%;">Professor/ HoD</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Ph.D</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2006/4061</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">3</td>
+    <td style="height: 18px; width: 25.227%;">Er. Rajeev Bansal</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2006/8394</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">4</td>
+    <td style="height: 18px; width: 25.227%;">Er. Pinki Tanwar</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2010/119037</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">5</td>
+    <td style="height: 18px; width: 25.227%;">Er. Shabnam Parveen</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech., UGC-NET</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2010/4216</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">6</td>
+    <td style="height: 18px; width: 25.227%;">Er. Meenakshi Rani</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2009/18614</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">7</td>
+    <td style="height: 18px; width: 25.227%;">Er. Sonia Sharma</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2009/13365</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">8</td>
+    <td style="height: 18px; width: 25.227%;">Er. Mamta</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2009/13357</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">9</td>
+    <td style="height: 18px; width: 25.227%;">Er. Nidhi Seth</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2014/21908</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">10</td>
+    <td style="height: 18px; width: 25.227%;">Er. Monika Choudhary</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2018/16308</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">11</td>
+    <td style="height: 18px; width: 25.227%;">Er. Mohit Lalit</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">CBA/166B/2019/9427</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">12</td>
+    <td style="height: 18px; width: 25.227%;">Er. Bhawna Sharma</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">13</td>
+    <td style="height: 18px; width: 25.227%;">Er. Sumit Mahana</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech., UGC-NET</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">14</td>
+    <td style="height: 18px; width: 25.227%;">Er. Deepti Chauhan</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech., UGC-NET</td>
+    <td style="height: 18px; width: 9.9899%;">Pursuing</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">15</td>
+    <td style="height: 18px; width: 25.227%;">Er. Varnika</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">16</td>
+    <td style="height: 18px; width: 25.227%;">Er. Varsha</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">17</td>
+    <td style="height: 18px; width: 25.227%;">Er. Yashika Sharma</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 5.95359%;">18</td>
+    <td style="height: 18px; width: 25.227%;">Er. Vernika Shere</td>
+    <td style="height: 18px; width: 28.557%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 13.0172%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.9899%;">--</td>
+    <td style="height: 18px; width: 17.0535%;">--</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <br>
+    <h2><b>Activities</b></h2><hr>
+    <p>Department Organises Various Activities Time to Time for Extra Learnings For Students. </p>
+   <img src="{% static 'image/cs1.jpg'%}" style='max-width:100%;' > &nbsp;
+   <img src="https://www.jmit.ac.in/downloads/nimages/REST-API.jpg" height="280px" style='max-width:100%;' >
+   <br> <br>
+   <h2><b>Syllabus</b></h2><hr>
+   <div style="overflow-x: auto;">
+   <table style="width:100%;border-collapse:collapse;max-width: 100%;" class="padding" cellspacing="0" cellpadding="3" bordercolor="#DDDDDD" border="1">
+    <tbody><tr>
+        <td class="trbg" width="80" align="center"><b>Sr. No.</b></td>
+        <td class="trbg"><b>Name</b></td>
+        <td class="trbg" width="110">&nbsp;</td>
+    </tr><tr>
+                <td align="center">1</td>
+                <td>Scheme 1st Year</td>
+                <td><a href="{% static '1year.pdf' %}" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">2</td>
+                <td>Student Handbook 3rd sem</td>
+                <td><a href="downloads/files/n5f536019c7c8c.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">3</td>
+               <td> Student Handbook 4th sem</td>
+                <td><a href="downloads/files/n5f53604f73648.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">4</td>
+                <td>Student Handbook 5th Sem</td>
+                <td><a href="downloads/files/n5fd08b948f5db.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">5</td>
+                <td>Student Handbook 6th Sem</td>
+                <td><a href="downloads/files/n6053122746eca.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">6</td>
+                <td>Student Handbook 7th sem</td>
+                <td><a href="downloads/files/n5f536066e68ad.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">7</td>
+                <td>Student Handbook 8th Sem</td>
+                <td><a href="downloads/files/n6053123f9b03d.pdf" target="_blank" class="download">Download</a></td>
+            </tr></tbody></table></div>
+   
+</div>
+
+
+<div class="sidebar">
+           
+      
+           
+    <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+   <a href="/admission_procedure/" class='widget' >PROCEDURE</a>  <br>
+    
+    <a href="/courses_offered/" class='widget'>Courses Offered</a> <br> 
+    <a href="/cs/" class='widget'> &nbsp;&nbsp;-Computer Science</a> <br>
+    <a href="/it/" class='widget'> &nbsp;&nbsp;-Information Technology</a> <br>
+    <a href="/mech/" class='widget'> &nbsp;&nbsp;-Mechanical</a> <br>
+    <a href="/ece/" class='widget'> &nbsp;&nbsp;-Electronics and communication</a> <br>
+    <a href="/ele/" class='widget'> &nbsp;&nbsp;-Electrical</a> <br>
+    <a href="/ash/" class='widget'> &nbsp;&nbsp;-Applied Science and Humanities</a> <br>
+    <a href="/bba/" class='widget'> &nbsp;&nbsp;-Bachelor of Business Administration</a> <br>
+    <a href="/mba/" class='widget'> &nbsp;&nbsp;-Master of Business Administration</a> <br>
+    <a href="/bca/" class='widget'> &nbsp;&nbsp;-Bachelor of Computer Application</a> <br>
+    <a href="/mca/" class='widget'> &nbsp;&nbsp;-Master of Computer Application</a> <br>
+    <a href="/fees/" class='widget' >Fee Structure</a> <br>
+    <a href="/Epros/" class='widget' >E-Prospectus</a>
+ 
+</div><!-- .sidebar -->
+</div>
+
+
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+     
+            <h3>About<span>JMIT</span></h3>
+    
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+    
+          
+        </div>
+    
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                  <p><span></span>
+                    Radaur-135133
+                    (Distt. Yamuna Nagar)<br>
+                    Haryana </p>
+            </div>
+    
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>01732-283700, 283800</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the College</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+          
+                <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}

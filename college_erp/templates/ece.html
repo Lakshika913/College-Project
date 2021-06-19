@@ -1,0 +1,497 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+        .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 1%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  padding-top: 45px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+    padding-top: 4px;
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+
+/*footer*/
+    
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;}
+
+    .footer-distributed{
+        background-color: #3253a8;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-distributed .footer-left{
+        width: 30%;
+    }
+    
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    /* The company logo */
+    
+    .footer-distributed .footer-left img{
+        width: 30%;
+    }
+    
+    .footer-distributed h3 span{
+        color:  #e0ac1c;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+    }
+    
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+        color:  #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+    
+    
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+        color:  #e0ac1c;
+        text-decoration: none;;
+    }
+    
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+        width: 30%;
+    }
+    
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    @media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}
+    .carousel-inner{
+        height: 550px;
+    }</style>
+    <br>
+    <div class='container'> <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+          <li class="breadcrumb-item"><a href="/courses_offered/" style="text-decoration: none;">Courses Offered</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Electronics and Communications
+          </li>
+        </ol>
+      </nav></div>
+    <div class="site">
+        <div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+   <h2><b>OBJECTIVE</b></h2><hr>
+   
+   
+
+
+
+   B. Tech in Electronics and Communication Engineering is a valued degree which aims to enhance the knowledge of the students and help them unveil fresh ideas to the world. The program focuses on furnishing the core skills of the students by providing hands-on -experience. In addition to the facilitation of quality academic environment, the program aims to help the students: <br><br>
+
+   -Excel in their professional career, higher studies, and research. <br>
+   -Generate new and innovative ideas. <br>
+   -Become industry ready by participating in regular training programs.
+<br>   -Serving the society as a whole. <br>
+
+
+
+<br> 
+   <h2><b>BENEFITS</b></h2><hr>
+
+
+  
+
+
+   B.Tech Electronics and Communication degree has several benefits. After becoming a graduate in the said field, the candidates become worthy of highly remunerative job profiles. The degree-program is tremendously fruitful for those students who are fascinated by electronics, mathematics and physics. The companies which are associated with power electronics, telecommunication, mobile communication, satellite communication etc are always in search of competent aspirants hence widening the scope of the discipline. Some of the ancillary benefits: <br> <br>
+
+   -Workshops, seminars & conferences are organized in the department to gain relevant knowledge. <br>
+   -Industrial Visits and training to provide exposure to the outside world. <br>
+   -Training and placement drives are conducted by the college annually. <br>
+   -Opportunities to join various clubs operated at the department level like Project club, Robotic club, IEDC etc.. <br>
+   -Participation in different competitions like CANSAT and SMART INDIA HACKATHON. <br>
+
+
+
+
+  <br><h2><b>Career Opportunities </b></h2><hr>
+
+
+  
+
+  B.Tech Electronics and Communication Engineering prepares the candidates for a better tomorrow. A B.Tech (ECE) graduate can set his/her foot in private as well as public sector. In public and private companies, the candidates can work as Service engineers, Network Planning engineers, R&D Software engineers, Software Analysts, Technical directors etc. Some of the prestigious public sector companies which provide career opportunities to the ECE graduates include ISRO, DRDO, BSNL, BHEL, HPCL, NTPC, BEL, IES and many more. Distinguished private companies such as Microsoft, Accenture, Delloite, Siemens etc also desire eligible candidates from the said domain.
+
+<br> <br>
+
+  <h2><b>PARTICIPATION & PRIZES:</b></h2><hr>
+  <div style="overflow-x: auto;">
+  <table width="100%" cellspacing="0" cellpadding="3s" border="0" align="center">
+    <tbody>
+    <tr>
+    <td><strong>1.</strong></td>
+    <td><strong>Tender Foot Award in CanSat competition to Mr. Mridul Babbar at NASA USA.</strong></td>
+    <td><img src="https://jmit.ac.in/downloads/nimages/mridual.jpg" style='max-width: 100%;'></td>
+    </tr>
+    <tr>
+    <td><strong>2.</strong></td>
+    <td><strong>India Skills Award to Mr. Kunal Jain</strong></td>
+    <td><img src="https://jmit.ac.in/downloads/nimages/kunal-jain.jpg"></td>
+    </tr>
+    <tr>
+    <td><strong>3.</strong></td>
+    <td><strong>Best Cadet Award to Mr. Ravi Ranjan</strong></td>
+    <td><img src="https://jmit.ac.in/downloads/nimages/best-cadet-ravi-ranjan-1.jpg"></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <br>
+    <h2><b>
+        PROJECTS</b></h2><hr>
+        Quadcopter, Blind stick, Path finder, LED display board, Obstacle avoider, Line follower, MIDI, walk-n-talk, Bluetooth Robomachine, Home automation using IOT, Self balancing Robot, Electronics surveillance system.
+
+ <br> <br>
+<h2><b>FACULTY</b></h2><hr>
+<div style="overflow-x: auto;">
+<table style="height: 126px; width: 100%;" width="100%" cellpadding="4" >
+    <tbody>
+    <tr style="height: 18px;">
+    <td class="tab_head" style="height: 36px; width: 6.94444%; text-align: center;" rowspan="2"><strong>S. No.</strong></td>
+    <td class="tab_head" style="height: 36px; width: 26.3889%; text-align: center;" rowspan="2"><strong>Name of The Teaching Faculty</strong></td>
+    <td class="tab_head" style="height: 36px; width: 17.5595%; text-align: center;" rowspan="2"><strong>Designation</strong></td>
+    <td class="tab_head" style="height: 18px; width: 47.5199%; text-align: center;" colspan="3"><strong>Qualification</strong></td>
+    </tr>
+    <tr style="height: 18px;">
+    <td class="tab_head" style="height: 18px; width: 15.873%; text-align: center;"><strong>PG</strong></td>
+    <td class="tab_head" style="height: 18px; width: 9.52381%; text-align: center;"><strong>Doctorate</strong></td>
+    <td class="tab_head" style="height: 18px; width: 22.123%; text-align: center;"><strong>University Aprroval No.</strong></td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.94444%;">1</td>
+    <td style="height: 18px; width: 26.3889%;">Ms. Deepti Malhotra</td>
+    <td style="height: 18px; width: 17.5595%;">Off. HOD/ Asso. Prof.</td>
+    <td style="height: 18px; width: 15.873%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.52381%;">Pursuing</td>
+    <td style="height: 18px; width: 22.123%;">CBA166B/2009/18610</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.94444%;">2</td>
+    <td style="height: 18px; width: 26.3889%;">Mr. Anil Kamboj</td>
+    <td style="height: 18px; width: 17.5595%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 15.873%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.52381%;">Pursuing</td>
+    <td style="height: 18px; width: 22.123%;">CBA-166B/2013/10292</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.94444%;">3</td>
+    <td style="height: 18px; width: 26.3889%;">Ms. Sonia Saini</td>
+    <td style="height: 18px; width: 17.5595%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 15.873%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.52381%;">Pursuing</td>
+    <td style="height: 18px; width: 22.123%;">CBA166B/2012/13941</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.94444%;">4</td>
+    <td style="height: 18px; width: 26.3889%;">Dr. Rohan Gupta</td>
+    <td style="height: 18px; width: 17.5595%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 15.873%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.52381%;">Ph.D</td>
+    <td style="height: 18px; width: 22.123%;">CBA166B/2013/15931</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.94444%;">5</td>
+    <td style="height: 18px; width: 26.3889%;">Mr. Gautam Gupta</td>
+    <td style="height: 18px; width: 17.5595%;">Asst. Prof.</td>
+    <td style="height: 18px; width: 15.873%;">M.Tech.</td>
+    <td style="height: 18px; width: 9.52381%;">--</td>
+    <td style="height: 18px; width: 22.123%;">--</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <br>
+    <h2><b>CENTRE OF EXCELLENCES:</b></h2><hr>
+    Robotics (CER): training and projects on AVR, PIC microcontroller, AURDINO and Rasberry â€“pi. (Total students trained 500+ so far.) <br><br>
+
+Texas Instruments Innovation Centre (TIIC) for analog circuit designing and IOT based projects using low power microcontroller. (Total students trained 150+ so far.)
+   <br> <br>
+   <h2><b>SYLLABUS</b></h2><hr>
+   <div style="overflow-x: auto;">
+   <table style="width:100%;border-collapse:collapse;" class="padding" cellspacing="0" cellpadding="3" bordercolor="#DDDDDD" border="1">
+    <tbody><tr>
+        <td class="trbg" width="80" align="center"><b>Sr. No.</b></td>
+        <td class="trbg"><b>Name</b></td>
+        <td class="trbg" width="110">&nbsp;</td>
+    </tr><tr>
+                <td align="center">1</td>
+                <td>Scheme 1st Year</td>
+                <td><a href="{% static '1year.pdf' %}" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">2</td>
+                <td>Student Handbook 3rd sem</td>
+                <td><a href="downloads/files/n5f536019c7c8c.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">3</td>
+               <td> Student Handbook 4th sem</td>
+                <td><a href="downloads/files/n5f53604f73648.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">4</td>
+                <td>Student Handbook 5th Sem</td>
+                <td><a href="downloads/files/n5fd08b948f5db.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">5</td>
+                <td>Student Handbook 6th Sem</td>
+                <td><a href="downloads/files/n6053122746eca.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">6</td>
+                <td>Student Handbook 7th sem</td>
+                <td><a href="downloads/files/n5f536066e68ad.pdf" target="_blank" class="download">Download</a></td>
+            </tr><tr>
+                <td align="center">7</td>
+                <td>Student Handbook 8th Sem</td>
+                <td><a href="downloads/files/n6053123f9b03d.pdf" target="_blank" class="download">Download</a></td>
+            </tr></tbody></table></div>
+   
+</div>
+
+<div class="sidebar">
+           
+      
+           
+    <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+   <a href="/admission_procedure/" class='widget' >PROCEDURE</a>  <br>
+    
+    <a href="/courses_offered/" class='widget'>Courses Offered</a> <br> 
+    <a href="/cs/" class='widget'> &nbsp;&nbsp;-Computer Science</a> <br>
+    <a href="/it/" class='widget'> &nbsp;&nbsp;-Information Technology</a> <br>
+    <a href="/mech/" class='widget'> &nbsp;&nbsp;-Mechanical</a> <br>
+    <a href="/ece/" class='widget'> &nbsp;&nbsp;-Electronics and communication</a> <br>
+    <a href="/ele/" class='widget'> &nbsp;&nbsp;-Electrical</a> <br>
+    <a href="/ash/" class='widget'> &nbsp;&nbsp;-Applied Science and Humanities</a> <br>
+    <a href="/bba/" class='widget'> &nbsp;&nbsp;-Bachelor of Business Administration</a> <br>
+    <a href="/mba/" class='widget'> &nbsp;&nbsp;-Master of Business Administration</a> <br>
+    <a href="/bca/" class='widget'> &nbsp;&nbsp;-Bachelor of Computer Application</a> <br>
+    <a href="/mca/" class='widget'> &nbsp;&nbsp;-Master of Computer Application</a> <br>
+    <a href="/fees/" class='widget' >Fee Structure</a> <br>
+    <a href="/Epros/" class='widget' >E-Prospectus</a>
+ 
+</div><!-- .sidebar -->
+</div>
+
+
+
+
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+     
+            <h3>About<span>JMIT</span></h3>
+    
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+    
+          
+        </div>
+    
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                  <p><span></span>
+                    Radaur-135133
+                    (Distt. Yamuna Nagar)<br>
+                    Haryana </p>
+            </div>
+    
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>01732-283700, 283800</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the College</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+          
+                <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}

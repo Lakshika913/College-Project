@@ -1,0 +1,570 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins' , sans-serif;
+    }
+    .header{
+        min-height: 87vh;
+        height:460px;
+        width: 100%;
+        background-position: center;
+        background-image: linear-gradient(rgba(0,0,0,5),rgba(0,0,0,5));
+        background-size: cover;
+        position: relative;
+    }
+    .text-box{
+        width: 90%;
+        color: whitesmoke;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        }
+        .text-box h1{
+            font-size: 52px;
+        }
+        .text-box h4{
+            margin: 10px 0 40px;
+            font-size: 20px;
+            color: #fff;
+        }
+        .title-text{
+            text-align: center;
+            padding-bottom: 70px;
+        }
+        .title-text p{
+            margin: auto;
+            font-size: 30px;
+            color: #009688;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+        .title-text p::after{
+            content: '';
+            width: 50px;
+            height: 35px;
+            background: linear-gradient(#019587,#fff);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            z-index: -1;
+            transform: rotate(10deg);
+            border-top-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+        .title-text h1{
+            font-size: 50px;
+        }
+        #testimonial{
+            width: 100%;
+            padding: 70px 0;
+            
+        }
+        .testimonial-row{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 100%;
+           
+        }
+        .testimonial-col{
+            flex-basis: 28%;
+            padding: 10px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px 3px #00968814;
+            cursor: pointer;
+            transition: transform .5s;
+            background-color :powderblue;
+            
+        }
+        .testimonial-col p{
+            font-size: 14px;
+        }
+        .user{
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .user img{
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border-radius: 3px;    
+        }
+        .user-info .fab{
+            margin-left: 10px;
+            color: #009696;
+            font-size: 17px;
+        }
+        .user-info small{
+            color: #009696;
+        }
+        .testimonial-col:hover{
+            transform: translateY(-7px);
+        }
+        .hero-btn{
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 13px;
+            font-size: 18px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            width: 200px;
+        }
+        .hero-btn:hover{
+            border: 1px solid #f44366;
+            background: #f44366;
+            transition: 1s;
+            color: white;
+        }
+
+        img {
+  width: 100%; /* need to overwrite inline dimensions */
+  height: auto;
+}
+h2 {
+  margin-bottom: .5em;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+}
+
+
+/* hover styles */
+.location-listing {
+  position: relative;
+}
+
+.location-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.location-image img {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+  height: 270px;
+}
+
+.location-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background: rgba(136, 63, 72, 0.4);
+  color: white;
+  
+  /* position the text in t’ middle*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-listing:hover .location-title {
+  opacity: 1;
+}
+
+.location-listing:hover .location-image img {
+  filter: blur(4px);
+}
+/*footer*/
+
+.footer-distributed{
+	background-color: #3253a8;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}@media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}
+.carousel-inner{
+    height: 550px;
+}
+</style>
+    <section class="header">
+        <img src="{% static 'image/collegeimg.jpg'%}"  height="200px">
+    </section>
+    <div class="text-box"> <br> <br> <br> <br> <br> 
+       <!---<h1><font color="white">Seth Jai Parkash Mukandlal Institutions of Knowledge and Service</h1> -->
+       <h3><font color="white">COME AND EXPLORE YOUR POTENTIAL AT JMIT</h3></font> <br>
+        <a href="http://127.0.0.1:8000/apply" class="hero-btn">Apply Now!</a>
+    </div><br><br>
+    <!--Courses offered-->
+    <div class="container">
+        <div class="title-text">
+            <center><p>Courses Offered</p></center>
+        </div>
+        <br>
+    <div class="child-page-listing">
+      <div class="grid-container">
+          <article id="3685" class="location-listing">
+              <a class="location-title" href="#">-Computer Science <br>
+                -Information Technology <br>-Mechanical <br>
+                -Electrical<br>
+              </a>
+              <div class="location-image">
+                  <a href="#"><img  src="{% static 'image/engineering.jpg'%}" alt="san francisco"></a>
+                </div>
+        </article>
+    
+        <article id="3688" class="location-listing">
+            <a class="location-title" href="#">Bachelor of Business Administration <br>
+                -Master of Business Administration <br>
+              </a>
+            <div class="location-image">
+                <a href="#"><img src="{% static 'image/management.jpg'%}" alt="london"></a>
+          </div>
+        </article>
+    
+        <article id="3691" class="location-listing">
+            <a class="location-title" href="#">
+                -Bachelor of Computer Applications <br>
+                -Master of Computer Applications <br>
+              
+            </a>
+    
+          <div class="location-image">
+            <a href="#">
+                <img  src="{% static 'image/csa.jpg'%}" alt="new york">  </a>
+    
+          </div>
+    
+        </article>
+    
+        
+      </div>
+      <!-- end grid container -->
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <!--Testimonial-->
+    <section id="testimonial">
+        <div class="title-text">
+            <p>What Alumni Says</p>
+        </div>
+        <div class="testimonial-row">
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static 'image/test1.jpg' %}" alt="">
+                    <div class="user-info">
+                        <h5>PRIYANKA MEHTA </h5>
+                        
+                    </div>
+                </div>
+                
+                <p><font color="black">The placements in our college are outstanding. Few students got placed from the ECE branch, and the placements are good only for CSE and IT students. The highest salary package offered for CSE or ECE students is 10 LPA, the lowest salary package offered is 2.5 LPA, and the average salary package offered is 3 LPA. Only service-based companies visit here like TCS, Infosys, Wipro, Code Quotient etc. Few students got internships.</p>
+                </font>
+                    <br><br>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static 'image/test2.jpg' %}" alt="">
+                    <div class="user-info">
+                        <h5>LOVISH KHURANA</h5>
+                        
+                    </div>
+                </div><font color="black">
+                <p>JMIT, Radaur is one of the premier institutes of engineering in haryana established in 1995 so its almost 2 decades this college has been there. It is the no.1 engineering college affiliated to kuk and also one of the best in haryana. Campus is around 25 acre (big enough). Placements scenario is not so good here bcoz of downward trend in our economy which is also a phenomenon with other colleges not only in haryana but all over india. TCS and TECH MAHINDRA are mass recruiters. Fees is also nominal and much less then other private institutes.</p>
+            </font>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static 'image/test3.jpg' %}" alt="">
+                    <div class="user-info">
+                        <h5>SIMRAN JHAA </h5>
+                       
+                    </div>
+                </div><font color="black">
+              
+                    <p>Best private college in haryana.. Better placements and learning growth... Management works for student wellfare by providing loans.. Nice college to remember for life time.</p><br><br><br><br><br><br><br> 
+                </font>
+                </div>
+        </div>
+    </section>
+
+
+<!--imagees-->
+<div class="container">
+    <div class="title-text">
+        <p>BECOME A CREATIVE YOUNG GUN</p>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner"  >
+            <div class="carousel-item active">
+                <img src="{% static 'image/slider.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/slider1.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/slider2.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/slider4.jpeg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/slider3.png' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/slider5.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!--footeer-->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+     
+            <h3>About<span>JMIT</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+          
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                  <p><span></span>
+                    Radaur-135133
+                    (Distt. Yamuna Nagar)<br>
+                    Haryana </p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>01732-283700, 283800</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the College</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+          
+                <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+
+    
+
+{% endblock %}

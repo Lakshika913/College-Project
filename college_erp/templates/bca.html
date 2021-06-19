@@ -1,0 +1,477 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+      .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 1%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  padding-top: 45px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+    padding-top: 4px;
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+/*footer*/
+    
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;}
+
+    .footer-distributed{
+        background-color: #3253a8;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-distributed .footer-left{
+        width: 30%;
+    }
+    
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+    
+    /* The company logo */
+    
+    .footer-distributed .footer-left img{
+        width: 30%;
+    }
+    
+    .footer-distributed h3 span{
+        color:  #e0ac1c;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+    }
+    
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+        color:  #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+    
+    
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+        color:  #e0ac1c;
+        text-decoration: none;;
+    }
+    
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+        width: 30%;
+    }
+    
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+    
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+    
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    @media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}
+    .carousel-inner{
+        height: 550px;
+    }</style>
+    <br>
+    <div class='container'> <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+          <li class="breadcrumb-item"><a href="/courses_offered/" style="text-decoration: none;">Courses Offered</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Bachelor of Computer Applications
+          </li>
+        </ol>
+      </nav></div>
+    <div class="site">
+        <div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+   <h2><b>OBJECTIVE</b></h2><hr>
+   
+   
+
+   
+
+Bachelor of Computer Application intends to instill the fundamentals of Information Technology along with computing principles into the students. Primarily, the course aims to construct a pathway to a successful career for its students. The program also aims: <br><br>
+
+-To instill a thorough understanding of the subject into the students <br>
+-To provide insight into the present-day advancements of the field by regularly updating the curriculum <br>
+-To polish those skills which are pertinent to the IT field <br>
+-To bring those areas of the field into the limelight which require further development <br>
+-To prepare the students for higher studies <br>
+-To equip the candidates as per industry needs <br>
+
+
+<br>
+
+<h2><b>BENEFITS</b></h2><hr>
+
+
+For competent BCA graduates, there are numerous benefits. Upon the completion of the degree from any reputed college, the students become eligible for entering the industry. <br><br>
+
+A three-year BCA degree can stand equal to a four-year B.Tech (IT) if done brilliantly. With this degree, varieties of new career avenues enter the picture. From private companies & MNCs to Government sector,numerous companies desire proficient candidates. Some of the superior private sector companies which look for BCA graduates include Wipro, Infosys, TCS, HCL and other companies of a similar sort.
+<br>
+<br> <br>
+   <h2><b>CAREER OPPORTUNITIES</b></h2><hr>
+
+
+  
+
+   Along with the conclusion of the BCA degree, numerous career opportunities come to the forefront. Any eligible candidate who has full-fledged skills demanded by the respective job profile surely gets a chance to exhibit his/her intellects. After getting the degree, the students can work as Web Developers, Web Designers, Network Administrators, System Managers, Computer Programmers, Software Developers, and Software Testers etc.
+<br> <br>
+
+  <br>
+  
+  <h2><b>ACHIEVEMENTS</b></h2><hr>
+  <div style="overflow-x: auto;">
+  <table style="border: 1px solid #d3d3d3; border-collapse: collapse; width: 100%;" width="100%" cellspacing="0" cellpadding="3" border="1">
+    <tbody>
+    <tr style="height: 18px;">
+    <td style="text-align: center; height: 18px;">1st Position (BCA – 2nd Sem) in KUK</td>
+    <td style="text-align: center; height: 18px;">3rd Position (BCA – 2nd Sem) in KUK</td>
+    </tr>
+    <tr>
+    <td style="text-align: center;"><img src="https://jmit.ac.in/downloads/nimages/mehak-bca-I.jpg" alt="" width="30%"></td>
+    <td style="text-align: center;"><img src="https://jmit.ac.in/downloads/nimages/shivanshi-bca-I.jpg" alt="" width="30%"></td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; text-align: center;">Ms. Mehak</td>
+    <td style="height: 18px; text-align: center;">Ms. Shivanshi</td>
+    </tr>
+    </tbody>
+    </table> </div><br>
+    <div style="overflow-x: auto;">
+    <table style="border: 1px solid #d3d3d3; border-collapse: collapse; width: 100%;" width="100%" cellspacing="0" cellpadding="3" border="1">
+        <tbody>
+        <tr>
+        <td style="text-align: center; height: 18px;">2nd Position (BCA – 1st Sem) in KUK</td>
+        <td style="text-align: center; height: 18px;">10th Position (BCA – 1st Sem) in KUK</td>
+        </tr>
+        <tr>
+        <td style="text-align: center;"><img src="https://jmit.ac.in/downloads/nimages/mehak-bca-I.jpg" alt="" width="30%"></td>
+        <td style="text-align: center;"><img src="https://jmit.ac.in/downloads/nimages/shivanshi-bca-I.jpg" alt="" width="30%"></td>
+        </tr>
+        <tr>
+        <td style="text-align: center;">Ms. Mehak</td>
+        <td style="text-align: center;">Ms. Shivanshi</td>
+        </tr>
+        </tbody>
+        </table></div>
+
+ <br>
+<h2><b>Faculty</b></h2><hr>
+<div style="overflow-x: auto;">
+<table style="height: 144px; width: 98.4127%;" width="100%" cellpadding='3'>
+    <tbody>
+    <tr style="height: 18px;">
+    <td class="tab_head" style="height: 36px; text-align: center; width: 6.25%;" rowspan="2"><strong>S. No.</strong></td>
+    <td class="tab_head" style="height: 36px; text-align: center; width: 20.0397%;" rowspan="2"><strong>Name</strong></td>
+    <td class="tab_head" style="height: 36px; text-align: center; width: 22.4206%;" rowspan="2"><strong>Designation</strong></td>
+    <td class="tab_head" style="height: 18px; text-align: center; width: 49.7024%;" colspan="3"><strong>Qualification</strong></td>
+    </tr>
+    <tr style="height: 18px;">
+    <td class="tab_head" style="height: 18px; text-align: center; width: 16.5675%;"><strong>PG</strong></td>
+    <td class="tab_head" style="height: 18px; text-align: center; width: 10.0198%;"><strong>Doctorate</strong></td>
+    <td class="tab_head" style="height: 18px; text-align: center; width: 23.1151%;"><strong>University Aprroval No.</strong></td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.25%; text-align: center;">1</td>
+    <td style="height: 18px; width: 20.0397%; text-align: left;">Ms. Divya Singla</td>
+    <td style="height: 18px; width: 22.4206%; text-align: left;">BCA Incharge, Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">M.Tech., UGC-NET</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">CBA/166B/2018/16308</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="width: 6.25%; height: 18px; text-align: center;">2</td>
+    <td style="width: 20.0397%; height: 18px; text-align: left;">Ms. Nisha Raheja</td>
+    <td style="width: 22.4206%; height: 18px; text-align: left;">Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">M.Tech.</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">CBA/166B/2018/16308</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.25%; text-align: center;">3</td>
+    <td style="height: 18px; width: 20.0397%; text-align: left;">Ms. Anita Saini</td>
+    <td style="height: 18px; width: 22.4206%; text-align: left;">Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">M.Tech., UGC-NET, JRF</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.25%; text-align: center;">4</td>
+    <td style="height: 18px; width: 20.0397%; text-align: left;">Ms. Priyanka Singh</td>
+    <td style="height: 18px; width: 22.4206%; text-align: left;">Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">MCA, UGC-NET, JRF</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.25%; text-align: center;">5</td>
+    <td style="height: 18px; width: 20.0397%; text-align: left;">Ms. Neha Kamboj</td>
+    <td style="height: 18px; width: 22.4206%; text-align: left;">Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">M.Tech.</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.25%; text-align: center;">6</td>
+    <td style="height: 18px; width: 20.0397%; text-align: left;">Ms. Ekta Dutta</td>
+    <td style="height: 18px; width: 22.4206%; text-align: left;">Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">M.Tech.</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">--</td>
+    </tr>
+    <tr style="height: 18px;">
+    <td style="height: 18px; width: 6.25%; text-align: center;">7</td>
+    <td style="height: 18px; width: 20.0397%; text-align: left;">Ms. Mamta Khepar</td>
+    <td style="height: 18px; width: 22.4206%; text-align: left;">Asst. Prof.</td>
+    <td style="height: 18px; width: 16.5675%; text-align: left;">M.Tech.</td>
+    <td style="height: 18px; width: 10.0198%; text-align: center;">--</td>
+    <td style="height: 18px; width: 23.1151%; text-align: center;">--</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <br>
+    
+   <br> <br>
+   
+</div>
+<div class="sidebar">
+           
+      
+           
+    <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+   <a href="/admission_procedure/" class='widget' >PROCEDURE</a>  <br>
+    
+    <a href="/courses_offered/" class='widget'>Courses Offered</a> <br> 
+    <a href="/cs/" class='widget'> &nbsp;&nbsp;-Computer Science</a> <br>
+    <a href="/it/" class='widget'> &nbsp;&nbsp;-Information Technology</a> <br>
+    <a href="/mech/" class='widget'> &nbsp;&nbsp;-Mechanical</a> <br>
+    <a href="/ece/" class='widget'> &nbsp;&nbsp;-Electronics and communication</a> <br>
+    <a href="/ele/" class='widget'> &nbsp;&nbsp;-Electrical</a> <br>
+    <a href="/ash/" class='widget'> &nbsp;&nbsp;-Applied Science and Humanities</a> <br>
+    <a href="/bba/" class='widget'> &nbsp;&nbsp;-Bachelor of Business Administration</a> <br>
+    <a href="/mba/" class='widget'> &nbsp;&nbsp;-Master of Business Administration</a> <br>
+    <a href="/bca/" class='widget'> &nbsp;&nbsp;-Bachelor of Computer Application</a> <br>
+    <a href="/mca/" class='widget'> &nbsp;&nbsp;-Master of Computer Application</a> <br>
+    <a href="/fees/" class='widget' >Fee Structure</a> <br>
+    <a href="/Epros/" class='widget' >E-Prospectus</a>
+ 
+</div><!-- .sidebar -->
+</div>
+
+
+
+
+
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+     
+            <h3>About<span>JMIT</span></h3>
+    
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+    
+          
+        </div>
+    
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                  <p><span></span>
+                    Radaur-135133
+                    (Distt. Yamuna Nagar)<br>
+                    Haryana </p>
+            </div>
+    
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>01732-283700, 283800</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the College</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+          
+                <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}

@@ -1,0 +1,386 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 1%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  padding-top: 45px;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+    padding-top: 4px;
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+
+/*footer*/
+  @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+  .footer-distributed{
+      background-color: #3253a8;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 50px 50px 60px 50px;
+      margin-top: 80px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+      display: inline-block;
+      vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+      width: 30%;
+  }
+  
+  .footer-distributed h3{
+      color:  #ffffff;
+      font: normal 36px 'Cookie', cursive;
+      margin: 0;
+  }
+  
+  /* The company logo */
+  
+  .footer-distributed .footer-left img{
+      width: 30%;
+  }
+  
+  .footer-distributed h3 span{
+      color:  #e0ac1c;
+  }
+  
+  /* Footer links */
+  
+  .footer-distributed .footer-links{
+      color:  #ffffff;
+      margin: 20px 0 12px;
+  }
+  
+  .footer-distributed .footer-links a{
+      display:inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color:  inherit;
+  }
+  
+  .footer-distributed .footer-company-name{
+      color:  #8f9296;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+  }
+  
+  /* Footer Center */
+  
+  .footer-distributed .footer-center{
+      width: 35%;
+  }
+  
+  
+  .footer-distributed .footer-center i{
+      background-color:  #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+      font-size: 17px;
+      line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+      display: inline-block;
+      color: #ffffff;
+      vertical-align: middle;
+      margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+      display:block;
+      font-weight: normal;
+      font-size:14px;
+      line-height:2;
+  }
+  
+  .footer-distributed .footer-center p a{
+      color:  #e0ac1c;
+      text-decoration: none;;
+  }
+  
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+      width: 30%;
+  }
+  
+  .footer-distributed .footer-company-about{
+      line-height: 20px;
+      color:  #92999f;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+      display: block;
+      color:  #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+      margin-top: 25px;
+  }
+  
+  .footer-distributed .footer-icons a{
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color:  #33383b;
+      border-radius: 2px;
+  
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+  
+      margin-right: 3px;
+      margin-bottom: 5px;
+  }
+  @media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.footer-distributed .footer-center i{
+  margin-left: 0;
+}
+
+}
+  .carousel-inner{
+      height: 550px;
+  }</style>
+<br>
+<div class='container'> <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library
+    </li>
+  </ol>
+</nav></div>
+<div class="site">
+  <div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+  <h4><strong>JMIT CENTRAL LIBRARY</strong></h4>
+  <hr>
+  <center><img src="{% static 'image/library.png' %}" style="width:750px;height:400px;max-width: 100%;"></center>
+  <br>
+  <p>Library is the nerve centre of knowledge and is virtually the heart of an Academic Institution.
+     To inform, inspire, disseminate and develop its users intellectually/technically the library
+      maintains General Books, Text Books, Books for Competitive Examinations, Online Journals,
+      National/ International Print Journals/ Magazines, News Papers, Educational Video Cassettes/
+      CDs and Maps etc.Fully Computerized, Fully Air-conditioned, Internet, DELNET, Inter Library
+      Loan, Book Bank.</p>
+The JMIT Central Library has the seating capacity  is around 250 seats. The Library has a rich
+collection of 50,000+ books and also received around 156 printed national and international Journals
+ and subscribed 26 Magazines and 11 Newspapers.The Library has always been in forefront in the
+  application of latest information and communication technology, whenever available. To make it accomplish,
+   the Library in its electronic repository, has the access to 7000+ e-journals and Databases. In addition,
+    18310 video Lectures of IITs through National Programme on Technology Enhanced Learning are also
+    accessible over Campus Wide Network.Moreover, thousands e-books of national and international repute
+     publishers have also been added in e-repository to enrich the students.
+<br>
+<br>
+<h5>ABOUT JMIT LIBRARY:</h5>
+<table class="table table-primary table-hover" style="border:3;
+        background-color:yellow;">
+<tr>
+  <td>Total area of the library	</td>
+  <td>961 Sq.m.</td>
+</tr>
+<tr>
+  <td>Seating Capacity of the Library	</td>
+  <td>250</td>
+</tr>
+<tr>
+  <td>Working Hours of the Library	</td>
+  <td>09:25 am to 08:00 pm.</td>
+</tr>
+<tr>
+  <td>Library Networking Facility	</td>
+  <td>Yes. All library computers are on LAN & WAN.</td>
+</tr>
+<tr>
+  <td>Print Magazines/Journals subscribed to</td>
+  <td>100</td>
+</tr>
+<tr>
+  <td>E-Journal Subscribed to</td>
+  <td>IEEE (ASPP), Elsevier: Science Direct, Springer (ME & EEC), J-Gate (JET & MGT.), McGrawHill, ASTM Digital Library, Pro-Quest & DELNET</td>
+</tr>
+<tr>
+  <td>No. of News Papers subscribed to</td>
+  <td>16</td>
+</tr>
+<tr>
+  <td>Total No. of Books</td>
+  <td>52565</td>
+</tr>
+<tr>
+  <td>Total No. of CDs</td>
+  <td>3325</td>
+</tr>
+<tr>
+  <td>Departmental Libraries</td>
+  <td>09</td>
+</tr>
+</table>
+<h4>What User say about JMIT Central Library</h4>
+<br>
+    <img src="{% static 'image/library2.png' %}" style="width:300px;height:280px;max-width: 100%;">
+&nbsp;
+  
+<img src="{% static 'image/lib3.png' %}" style="width:300px;height:280px;max-width: 100%;">
+ &nbsp;
+  
+<img src="{% static 'image/lib4.png' %}" style="width:300px;height:280px;max-width: 100%;">
+  
+<br>
+</div>
+
+<div class="sidebar">
+           
+      
+           
+  <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+ <a href="/campus/" class='widget' >Campus</a>  <br>
+  
+  <a href="/lab/" class='widget'>Labs</a> <br>
+  <a href="/library/" class='widget' >Library</a> <br>
+  <a href="/audi/" class='widget' >Auditorium</a> <br>
+  <a href="/dispensary/" class='widget' >Dispensary</a> <br>
+  <a href="/hostel/" class='widget' >Hostels</a> <br>
+  <a href="/sports/" class='widget' >Sports</a> <br>
+
+</div><!-- .sidebar -->
+</div>
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+      <h3>About<span>JMIT</span></h3>
+
+      <p class="footer-links">
+          <a href="#">Home</a>
+          |
+          <a href="#">About</a>
+          |
+          <a href="#">Contact</a>
+      </p>
+
+    
+  </div>
+
+  <div class="footer-center">
+      <div>
+          <i class="fa fa-map-marker"></i>
+            <p><span></span>
+              Radaur-135133
+              (Distt. Yamuna Nagar)<br>
+              Haryana </p>
+      </div>
+
+      <div>
+          <i class="fa fa-phone"></i>
+          <p>01732-283700, 283800</p>
+      </div>
+      <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+      </div>
+  </div>
+  <div class="footer-right">
+      <p class="footer-company-about">
+          <span>About the College</span>
+          We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+      <div class="footer-icons">
+          <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+    
+          <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+      </div>
+  </div>
+</footer>
+{% endblock %}

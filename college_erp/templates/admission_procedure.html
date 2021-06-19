@@ -1,0 +1,362 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+   .site {
+  background-color: white;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+/* =Content
+---------------------------*/
+.content-wrapper {
+  padding: 40px;
+}
+.site-content {
+  padding-bottom: 40px;
+  padding-right: 2%;
+  border-bottom: 1px dotted #999;
+}
+.sidebar {
+  
+  font-size: 12px;
+  line-height: 21px;
+  text-align: left;
+}
+.widget {
+  padding-bottom: 10px;
+  text-decoration: none;
+    color: #291D25;
+
+    margin: 0;
+    font-weight: 400;
+   
+    padding: 0px 5px 0px 17px;
+}
+
+@media (min-width: 800px) {
+  .site-content {
+    width: 80%;
+    float: left;
+    border: none;
+  }
+  .sidebar {
+    width: 20%;
+    float: left;
+  
+    text-align: left;
+  }
+  .widget {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #291D25;
+   
+    margin: 0;
+    font-weight: 400;
+  
+    padding: 0px 5px 5px 17px;
+
+  }
+}
+  
+/*footer*/
+
+.footer-distributed{ 
+	background-color: #3253a8;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+@media (max-width: 880px) {
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-distributed .footer-center i{
+    margin-left: 0;
+}
+
+}
+.carousel-inner{
+    height: 550px;
+}
+  </style>
+<br>
+<div class='container'> <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/" style="text-decoration: none;">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Admission Procedure
+    </li>
+  </ol>
+</nav></div>
+<div class="site">
+	
+	
+	<div class="site-content" style="border-right: 1px dotted #9f9f9f;">
+		<h1><strong>ADMISSION PROCEDURE</strong></h1>
+
+
+
+  <br>
+
+Admission to all courses in JMIT & JMIETI is in accordance with per All India Council for Technical Education(AICTE),Haryana State Technical Education society(HSTES) and KUK. Online counselling is being conducted by Department of Technical Education, Govt. of Haryana every year as per Rank/Score of qualifying exam (JEE,LEET,CMAT,OLET)
+<br><br>
+<h3><b>Counselling Criteria:</b></h3>
+<h4>1) Management Counselling Procedure</h4>
+The institute shall fill 25% of sanctioned intake(management quota) of their AICTE approved B.Tech/B.Tech(Lateral Entry), MBA, MCA, BBA, BCA course at institute level on the basis of merit as per norms.
+<br><br>
+<b>Documents Required</b><br>
+1. JEE Admit Card (For B.Tech Admission).<br>
+2. JEE Rank Card (For B.Tech Admission).<br>
+3. 10th Pass Certificate (For D.O.B.).<br>
+4. 12th D.M.C. <br>
+5. 12th Pass Certificate <br>
+6. Mark sheet Graduation (For MBA/MCA Admission).<br>
+7. School leaving cum Character Certificate.  <br>
+8. Migration Certificate from School/college last attended. <br>
+9. Proof of Gap Year (If Required). <br>
+10. Medical Fitness Certificate (On the spot in the Institute). <br>
+11. Counter Foil/Receipt of Rs. 500/- (Of Registration). <br> 
+12. Caste certificate issued by Tehsildar. (For SC Students). <br>
+13. Income certificate issued by Tehsildar/Executive Magistrate. (For SC Students). <br>
+14. Residence certificate issued by Tehsildar. (For SC Students). <br>
+15. Aadhar Card . <br>
+16. Photocopy of Bank Pass book. <br>
+17. Four colored passport sized photgraphs. <br><br>
+<h4>2) Online Counselling Procedure:</h4> <br>
+<p>75% of sanctioned intake shall be filled through HSTES (as per 2019 norms). <br>
+  The admissions of 75% of sanctioned intake shall be done by HSTES as per the Reservation Policy notified by the State Government of Haryana. <br>
+  
+  Listed below are the steps involved in JEE Main Counselling and Seat Allotment Procedure: <br>
+  Step-1: Registration - First the candidates will have to register in the JoSAA web portal to participate in the JEE Main 2020 counselling and seat allotment process. <br>
+  Step-2: Choice Filling & Locking - They will have to lock their college preferences and B.Tech courses. The seats will be allocated to the candidates on the basis of choices filled. <br>
+  Step-3: Seat Allotment Process - Students will be allocated seats based on the availability of seats, preference & merit of the candidates. However, the mock allotment will be conducted by the exam authorities in two rounds before the actual seat allotment process. <br>
+  Step-4: Fee Payment & Seat Acceptance - After the completion of the seat allotment process, they will have to select any one of the following options. <br>
+  <br>
+      Float: If a candidate wishes to keep the allotted seat and also want to upgrade their seat, they can choose this option. <br>
+      Freeze: In case, candidates are satisfied with their allocated seats and do not want to participate in further rounds of counselling, they can select this option. <br>
+      Slide: If candidates wish to accept the allotted seat and want to upgrade the programme in the same institute, they can select this option. <br>
+      Withdraw: If any candidates have already accepted the seat allotted, they may withdraw the seat by reporting at the allotted institute before the final round of seat allotment. <br>
+  <br>
+  Step-5: Documents/Certificate Verification - After successful fee payment, candidates will have to verify their documents at the nearest help centres. <br>
+  
+  Step-6: Final reporting at the allocated Institution - Finally, the candidates will have to report at the allotted institute and pay the balance fees in the institute, confirm the admission after the verification process is completed.</p>
+
+</div>
+  <div class="sidebar">
+     
+    <h3 class="widget widget-header"  style="border-bottom: 1px dotted #9f9f9f;">More Links</h3> <br>
+    <a href="/admission_procedure/" class='widget' >PROCEDURE</a>  <br>
+     
+     <a href="/courses_offered/" class='widget'>Courses Offered</a> <br>
+     <a href="/fees/" class='widget' >Fee Structure</a> <br>
+     <a href="/Epros/" class='widget' >E-Prospectus</a>
+	
+  </div><!-- .sidebar -->
+
+</div>
+
+
+
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+      <h3>About<span>JMIT</span></h3>
+
+      <p class="footer-links">
+          <a href="#">Home</a>
+          |
+          <a href="#">About</a>
+          |
+          <a href="#">Contact</a>
+      </p>
+
+    
+  </div>
+
+  <div class="footer-center">
+      <div>
+          <i class="fa fa-map-marker"></i>
+            <p><span></span>
+              Radaur-135133
+              (Distt. Yamuna Nagar)<br>
+              Haryana </p>
+      </div>
+
+      <div>
+          <i class="fa fa-phone"></i>
+          <p>01732-283700, 283800</p>
+      </div>
+      <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:director@jmit.ac.in">director@jmit.ac.in</a></p>
+      </div>
+  </div>
+  <div class="footer-right">
+      <p class="footer-company-about">
+          <span>About the College</span>
+          We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+      <div class="footer-icons">
+          <a href="https://www.facebook.com/jmitinstitute/"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/jmitcollege?lang=en"><i class="fab fa-twitter"></i></a>
+    
+          <a href="https://in.linkedin.com/school/seth-jai-prakash-mukand-lal-institute-of-engineering-&-technology-jmit-/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/c/JmitCollege/videos?app=desktop&view=0&sort=dd&shelf_id=1"><i class="fab fa-youtube"></i></a>
+      </div>
+  </div>
+</footer>
+{% endblock %}
