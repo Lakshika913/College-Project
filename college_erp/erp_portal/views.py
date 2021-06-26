@@ -154,7 +154,11 @@ def login1(request):
                 print(t_id)
                 t_name = user.username
                 print(t_name)
-                return  render(request,'teacherlogin.html',{'t_id':t_id,'t_name':t_name})
+                detail=Teacher.objects.get(user=user.id)
+                print(detail)
+                
+                
+                return  render(request,'teacherlogin.html',{'t_id':t_id,'t_name':t_name,'detail':detail})
             elif user.userprofile.role == 'student':
                 s_id = user.id
                 print(s_id)

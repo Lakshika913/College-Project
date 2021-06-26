@@ -26,106 +26,11 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{% static "plugins/summernote/summernote-bs4.css" %}">
   
-  <style>
-    
-    .emp-profile{
-        padding: 3%;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        border-radius: 0.5rem;
-        background: white;
-    }
-    .profile-img{
-        text-align: center;
-    }
-    .profile-img img{
-        width: 70%;
-        height: 100%;
-    }
-    .profile-img .file {
-        position: relative;
-        overflow: hidden;
-        margin-top: -20%;
-        width: 70%;
-        border: none;
-        border-radius: 0;
-        font-size: 15px;
-        background: #212529b8;
-    }
-    .profile-img .file input {
-        position: absolute;
-        opacity: 0;
-        right: 0;
-        top: 0;
-    }
-    .profile-head h5{
-        color: #333;
-    }
-    .profile-head h6{
-        color: #0062cc;
-    }
-    .profile-edit-btn{
-        border: none;
-        border-radius: 1.5rem;
-        width: 70%;
-        padding: 2%;
-        font-weight: 600;
-        color: #6c757d;
-        cursor: pointer;
-    }
-    .proile-rating{
-        font-size: 12px;
-        color: #818182;
-        margin-top: 5%;
-    }
-    .proile-rating span{
-        color: #495057;
-        font-size: 15px;
-        font-weight: 600;
-    }
-    .profile-head .nav-tabs{
-        margin-bottom:5%;
-    }
-    .profile-head .nav-tabs .nav-link{
-        font-weight:600;
-        border: none;
-    }
-    .profile-head .nav-tabs .nav-link.active{
-        border: none;
-        border-bottom:2px solid #0062cc;
-    }
-    .profile-work{
-        padding: 14%;
-        margin-top: -15%;
-    }
-    .profile-work p{
-        font-size: 12px;
-        color: #818182;
-        font-weight: 600;
-        margin-top: 10%;
-    }
-    .profile-work a{
-        text-decoration: none;
-        color: #495057;
-        font-weight: 600;
-        font-size: 14px;
-    }
-    .profile-work ul{
-        list-style: none;
-    }
-    .profile-tab label{
-        font-weight: 600;
-    }
-    .profile-tab p{
-        font-weight: 600;
-        color: #0062cc;
-    }</style>
-
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     {% block custom_css %}{% endblock custom_css %}
 </head>
-<body class="hold-transition sidebar-mini layout-fixed" bgcolor="white">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
  
@@ -157,7 +62,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
        
         <div class="info">
-          <a href="#" class="d-block">{{ detail.name }}</a>
+          <a href="#" class="d-block">{{ t_id }}{{ t_name }}</a>
         </div>
       </div>
 
@@ -230,106 +135,14 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"></li>
+              <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/login/">Home</a></li>
             </ol>
           </div>
         </div>
       </div>
-      <div class="container emp-profile">
-        <form method="post">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                        
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                                <h5>
-                                    {{ detail.name }}
-                                </h5>
-                                <h6>
-                                    {{ detail.post }}
-                                </h6>
-                                <p class="proile-rating"><span></span></p><br><br>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-          <div class="row">
-                <div class="col-md-4">
-                  <!----<div class="profile-work">
-                        <p>WORK LINK</p>
-                        <a href="">Website Link</a><br/>
-                        <a href="">Bootsnipp Profile</a><br/>
-                        <a href="">Bootply Profile</a>
-                        <p>SKILLS</p>
-                        <a href="">Web Designer</a><br/>
-                        <a href="">Web Developer</a><br/>
-                        <a href="">WordPress</a><br/>
-                        <a href="">WooCommerce</a><br/>
-                        <a href="">PHP, .Net</a><br/>
-                    </div> -->
-                </div>
-                <div class="col-md-8">
-                    <div class="tab-content profile-tab" id="myTabContent">
-                        
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>User Id</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{ t_id }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Name</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{ detail.name }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{ t_name }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Date of Birth</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{ detail.DOB }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Department</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{ detail.dept }}</p>
-                                        </div>
-                                    </div>
-                        
-                       
-                    </div>
-                </div>
-            </div>
-        </form>           
-    </div>
-   
-
+      {{ detail.dept }}
+      {{ detail.name }}
+      {{ detail.DOB }}
       
     </div>
    
@@ -394,14 +207,6 @@
 <script src="{% static "dist/js/demo.js" %}"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<script>
-  $(function() {
-$('#profile-image1').on('click', function() {
-$('#profile-image-upload').click();
-});
-});       
-  </script> 
 {% block custom_js %}
 {% endblock custom_js %}
 

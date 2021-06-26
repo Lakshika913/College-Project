@@ -102,6 +102,7 @@ class Teacher(models.Model):
     name = models.CharField(max_length=100)
     sex = models.CharField(max_length=50, choices=sex_choice, default='Male')
     DOB = models.DateField(default='1980-01-01')
+    post=models.CharField(max_length=50,default='null')
     #weeklyload=models.IntegerField(default="1")
 
     def __str__(self):
