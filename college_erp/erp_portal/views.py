@@ -164,7 +164,9 @@ def login1(request):
                 print(s_id)
                 s_name = user.username
                 print(s_name)
-                return  render(request,'studentlogin.html',{'s_id':s_id,'s_name':s_name})
+                detail=Student.objects.get(user=user.id)
+                print(detail)
+                return  render(request,'studentlogin.html',{'s_id':s_id,'detail':detail,'s_name':s_name})
             elif user.userprofile.role == 'hod':
                 
                 return  render(request,'hod.html')
@@ -203,10 +205,11 @@ def staff_take_attendance(request,pk=None,*args,**kwargs):
     print(sub)
     tid = sub[0]['id']
     print(tid)
+    detail=Teacher.objects.get(user=pk)
     Subject = Assign.objects.filter(teacher_id=tid).all()
     print(Subject)
     # session_years = SessionYearModel.objects.all()   "session_years":session_years
-    return render(request,"staff_take_attendance.html",{'t_id':pk,'pk': pk,"subjects":Subject})
+    return render(request,"staff_take_attendance.html",{'t_id':pk,'pk': pk,'subjects':Subject,'detail':detail})
 
 @csrf_exempt
 def get_students(request,pk=None,*args,**kwargs):
@@ -327,10 +330,11 @@ def staff_update_attendance(request,pk=None,*args,**kwargs):
     print(sub)
     tid = sub[0]['id']
     print(tid)
+    detail=Teacher.objects.get(user=pk)
     Subject = Assign.objects.filter(teacher_id=tid).all()
     print(Subject)
     # session_years = SessionYearModel.objects.all()   "session_years":session_years
-    return render(request,"staff_update_attendance.html",{'t_id':pk,'pk': pk,"subjects":Subject})
+    return render(request,"staff_update_attendance.html",{'t_id':pk,'detail':detail,'pk': pk,"subjects":Subject})
 
 @csrf_exempt
 def get_attendance_dates(request,pk=None,*args,**kwargs):
@@ -441,11 +445,12 @@ def student_view_attendance(request,pk=None,*args,**kwargs):
     print('-------------- '+str(student))
     student_class = student[0]['class_id_id']
     print('+++++++++++'+str(student_class))
+    detail = Student.objects.get(user=pk)
     student_sub = SubjectAssign.objects.filter(class_id=student_class).all()
     print('================'+str(student_sub))
     # course=student.course_id
     # subjects=SubjectAssign.objects.filter(course_id=course)
-    return render(request,"student_view_attendance.html",{'s_id':pk,'pk': pk,"subjects":student_sub})
+    return render(request,"student_view_attendance.html",{'s_id':pk,'pk': pk,"subjects":student_sub,'detail':detail})
 
 def student_view_attendance_post(request,pk=None,*args,**kwargs):
     
@@ -461,7 +466,7 @@ def student_view_attendance_post(request,pk=None,*args,**kwargs):
     print('------------'+str(stud_pk))
     stud_name = stud_pk[0]['name']
     print('||||||||||||||------'+str(stud_name))
-
+    detail = Student.objects.get(user=pk)
 
     start_date=request.POST.get("start_date")
     end_date=request.POST.get("end_date")
@@ -480,7 +485,7 @@ def student_view_attendance_post(request,pk=None,*args,**kwargs):
     attendance_reports=AttendanceReport.objects.filter(attendance_id__in=attendance,student_id=stud_obj)
     print('###################'+str(attendance_reports))
     
-    return render(request,"student_attendance_data.html",{'s_id':pk,'pk': pk,"attendance_reports":attendance_reports})
+    return render(request,"student_attendance_data.html",{'s_id':pk,'pk': pk,"attendance_reports":attendance_reports,'detail':detail})
 
 
 def staff_add_result(request,pk=None,*args,**kwargs):
@@ -491,10 +496,11 @@ def staff_add_result(request,pk=None,*args,**kwargs):
     print(sub)
     tid = sub[0]['id']
     print(tid)
+    detail=Teacher.objects.get(user=pk)
     Subject = Assign.objects.filter(teacher_id=tid).all()
     print(Subject)
     
-    return render(request,"staff_add_result.html",{'t_id':pk,'pk': pk,"subjects":Subject})
+    return render(request,"staff_add_result.html",{'t_id':pk,'detail':detail,'pk': pk,"subjects":Subject})
 
 def save_student_result(request):
     if request.method!='POST':
@@ -567,6 +573,7 @@ def student_view_result(request,pk=None,*args,**kwargs):
     print('======='+str(student))
     usn = student[0]['USN']
     print('+++++++++++'+str(usn))
+    detail = Student.objects.get(user=pk)
     # class_id = student[0]['class_id_id']
     # print('$$$$$$$$$$$$$'+str(class_id))
     # subj = SubjectAssign.objects.filter(class_id=class_id).values()
@@ -585,5 +592,5 @@ def student_view_result(request,pk=None,*args,**kwargs):
     # print('((((('+str(stud_exam))
     studentresult=StudentResult.objects.filter(student_id=usn).all()
     print('@@@@@@@@@@@@@@@@@@@@'+str(studentresult))
-    return render(request,"student_result.html",{'s_id':pk,'pk': pk,'studentresult':studentresult})
+    return render(request,"student_result.html",{'s_id':pk,'pk': pk,'detail':detail,'studentresult':studentresult})
 
