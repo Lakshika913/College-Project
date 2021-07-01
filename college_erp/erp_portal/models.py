@@ -90,6 +90,7 @@ class Student(models.Model):
     name = models.CharField(max_length=200)
     sex = models.CharField(max_length=50, choices=sex_choice, default='Male')
     DOB = models.DateField(default='1998-01-01')
+    image = models.ImageField(upload_to='profile_image', default='default.jpg')
 
     def __str__(self):
         return self.name
@@ -103,6 +104,8 @@ class Teacher(models.Model):
     sex = models.CharField(max_length=50, choices=sex_choice, default='Male')
     DOB = models.DateField(default='1980-01-01')
     post=models.CharField(max_length=50,default='null')
+    image = models.ImageField(upload_to='profile_image', default='default.jpg')
+    qualification=models.CharField(max_length=20,default="B.Tech")
     #weeklyload=models.IntegerField(default="1")
 
     def __str__(self):

@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.http.request import validate_host
 from django.shortcuts import render, redirect, reverse
 from .models import *
+from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.template import loader
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect, response
@@ -12,6 +13,7 @@ import datetime
 from django.conf import settings 
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
+
 
 
 
@@ -135,17 +137,15 @@ def apply(request):
             messages.info(request, 'Form submitted successfully.')
             return redirect("http://127.0.0.1:8000")
     return render(request,"apply.html")
-@login_required
-def teacherlogin(request):
-    return render(request,"teacherlogin.html")
+
 @login_required
 def studentlogin(request):
     return render(request,"studentlogin.html")
 
 def login1(request):
     if request.method=="POST":
-        username = request.POST['username']
-        password = request.POST['pass']
+        username = request.POST.get('username')
+        password = request.POST.get('pass')
         user = auth.authenticate(username=username,password=password)
 
         if user is not None and user.is_active:
@@ -156,7 +156,6 @@ def login1(request):
                 print(t_name)
                 detail=Teacher.objects.get(user=user.id)
                 print(detail)
-                
                 
                 return  render(request,'teacherlogin.html',{'t_id':t_id,'t_name':t_name,'detail':detail})
             elif user.userprofile.role == 'student':
@@ -172,12 +171,27 @@ def login1(request):
                 return  render(request,'hod.html')
 
         else:
-            messages.info(request,"invalid login")
-            return redirect('login')
+            if request.method == 'POST':
+                form = Updateimage(request.POST,request.FILES)
+
+                if form.is_valid():
+                    form.save()
+                    return redirect("teacherlogin.html")
+            else:
+                print("no")
 
     else:
         return render(request, "login.html")
-
+@login_required
+def teacherlogin(request):
+    if request.method == 'POST':
+        img = request.FILES['image']
+        print(img)
+        return redirect("teacherlogin.html")
+    else:
+       print("no update")
+    
+    return render(request,"teacherlogin.html")
 @login_required
 def hod(request):
     
@@ -594,3 +608,14 @@ def student_view_result(request,pk=None,*args,**kwargs):
     print('@@@@@@@@@@@@@@@@@@@@'+str(studentresult))
     return render(request,"student_result.html",{'s_id':pk,'pk': pk,'detail':detail,'studentresult':studentresult})
 
+@login_required
+def update(request):
+    if request.method == 'POST':
+        img = request.FILES['image']
+        print(img)
+        return redirect("teacherlogin.html")
+    else:
+        print("no update")
+        return render(request,"t_profileupdate.html")
+    
+    

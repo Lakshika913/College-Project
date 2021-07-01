@@ -6,10 +6,12 @@
     *{
         margin: 0;
         padding: 0;
+        
         font-family: 'Poppins' , sans-serif;
     }
     .header{
         min-height: 87vh;
+        max-width: 100%;
         height:460px;
         width: 100%;
         background-position: center;
@@ -361,7 +363,7 @@ h2 {
 }
 </style>
     <section class="header">
-        <img src="{% static 'image/collegeimg.jpg'%}"  height="200px">
+        <img src="{% static 'image/collegeimg.jpg'%}"  height="200px" style="max-width: 100%;">
     </section>
     <div class="text-box"> <br> <br> <br> <br> <br> 
        <!---<h1><font color="white">Seth Jai Parkash Mukandlal Institutions of Knowledge and Service</h1> -->
@@ -382,7 +384,7 @@ h2 {
                 -Electrical<br>
               </a>
               <div class="location-image">
-                  <a href="#"><img  src="{% static 'image/engineering.jpg'%}" alt="san francisco"></a>
+                  <a href="#"><img  src="{% static 'image/engineering.jpg'%}" alt="san francisco" style="max-width: 100%;"></a>
                 </div>
         </article>
     
@@ -391,7 +393,7 @@ h2 {
                 -Master of Business Administration <br>
               </a>
             <div class="location-image">
-                <a href="#"><img src="{% static 'image/management.jpg'%}" alt="london"></a>
+                <a href="#"><img src="{% static 'image/management.jpg'%}" alt="london" style="max-width: 100%;"></a>
           </div>
         </article>
     
@@ -404,7 +406,7 @@ h2 {
     
           <div class="location-image">
             <a href="#">
-                <img  src="{% static 'image/csa.jpg'%}" alt="new york">  </a>
+                <img  src="{% static 'image/csa.jpg'%}" alt="new york" style="max-width: 100%;">  </a>
     
           </div>
     

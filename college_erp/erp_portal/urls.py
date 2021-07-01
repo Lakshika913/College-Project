@@ -61,6 +61,7 @@ urlpatterns = [
     path('mba/',views.mba,name='mba'),
     path('bca/',views.bca,name='bca'),
     path('mca/',views.mca,name='mca'),
+    path('account/',views.update,name='account'),
 
 
 

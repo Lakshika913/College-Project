@@ -56,12 +56,18 @@ Take Attendance
           </div>
           <!-- /.card -->
 
-
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'teacherlogin' t_id %}" class="nav-link {% if request.path == teacherlogin %} active {% endif %}">Home</a></li>
+            </ol>
+          </div>
 
         </div>
         </div>
     </div>
   </section>
+  
+    
   <!-- /.content -->
 {% endblock main_content %}
 {% block custom_js %}
